@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+    /* background-color: rgb(230, 243, 243); */
+}
 
 .image-container {
 	width: 100%;
@@ -44,11 +48,6 @@
 #search_icon {
 	height: 18px;
 	background-color: rgb(214, 219, 224);
-}
-
-body {
-    overflow-x: hidden;
-    /* background-color: rgb(230, 243, 243); */
 }
 
 .bkg_img {

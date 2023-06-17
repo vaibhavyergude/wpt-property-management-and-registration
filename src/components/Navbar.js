@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./Navbar.css";
-import SearchIcon from '@mui/icons-material/Search';
-import OtherHousesOutlinedIcon from '@mui/icons-material/OtherHousesOutlined';
+import SearchIcon from "@mui/icons-material/Search";
+import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
 
 function Navbar() {
 	return (
@@ -22,9 +22,9 @@ function Navbar() {
 											class="navbar-brand nav ms-4 navbar-dark"
 											href="./home.html"
 										>
-                                            <OtherHousesOutlinedIcon fontSize="large"/>
-                                            <span>&nbsp;</span>
-                                            <span>&nbsp;</span>
+											<OtherHousesOutlinedIcon fontSize="large" />
+											<span>&nbsp;</span>
+											<span>&nbsp;</span>
 											<h3>ElitePro</h3>
 										</a>
 										<button
@@ -49,7 +49,7 @@ function Navbar() {
 												<input type="text" placeholder="Search" />
 												<button type="submit">
 													{/* <img src="" alt="" id="search_icon" /> */}
-                                                    <SearchIcon />
+													<SearchIcon />
 												</button>
 											</form>
 
@@ -105,20 +105,22 @@ function Navbar() {
 									</nav>
 								</div>
 								<div class="body_content">
-									<div class="body_info">
+									{/* <div class="body_info">
 										<h1>The best property related website in india</h1>
 										<h3>Find the best property deal, rentals in India</h3>
+									</div> */}
+									<div class="col-sm-3 col-md-6 col-lg-8 mt-5">
+										<h1 class="display-4 text-white">
+											Welcome to  ElitePro
+										</h1>
+										<p class="lead text-white">
+                                        <h1>The best property related website in india</h1>
+										<h3>Find the best property deal, rentals in India</h3>
+										</p>
+										{/* <a class="btn btn-primary btn-lg" href="./services.html">
+											Explore Services
+										</a> */}
 									</div>
-									{/* <!-- <div class="col-sm-3 col-md-6 col-lg-8 mt-5">
-                            <h1 class="display-4 text-white">Welcome to Dream Properties</h1>
-							<p class="lead text-white">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-								pulvinar ligula eu fringilla eleifend. Nunc sed volutpat libero.
-							</p>
-							<a class="btn btn-primary btn-lg" href="./services.html"
-                            >Explore Services</a
-							>
-						</div> --> */}
 								</div>
 							</div>
 						</div>
