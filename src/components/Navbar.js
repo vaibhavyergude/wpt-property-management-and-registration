@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
@@ -18,7 +19,7 @@ function Navbar() {
 										class="navbar navbar-expand-lg"
 										style={{ width: "100%" }}
 									>
-										<a
+										{/* <a
 											class="navbar-brand nav ms-4 navbar-dark increase-size"
 											href="/home"
 										>
@@ -26,7 +27,16 @@ function Navbar() {
 												<OtherHousesOutlinedIcon fontSize="large" />
 												<h3>ElitePro</h3>
 											</div>
-										</a>
+										</a> */}
+										<Link
+											class="navbar-brand nav ms-4 navbar-dark increase-size"
+											to={"/"}
+										>
+											<div class="logo-container">
+												<OtherHousesOutlinedIcon fontSize="large" />
+												<h3>ElitePro</h3>
+											</div>
+										</Link>
 										<button
 											class="navbar-toggler"
 											type="button"
@@ -55,17 +65,20 @@ function Navbar() {
 
 											<ul class="navbar-nav">
 												<li class="nav-item active px-2">
-													<a
+													<Link
 														class="nav-link nav-font-color nav-color"
-														href="/property-listing"
+														to={"/property-listing"}
 													>
 														Buy
-													</a>
+													</Link>
 												</li>
 												<li class="nav-item px-2">
-													<a class="nav-link nav-font-color nav-color" href="/">
+													<Link
+														class="nav-link nav-font-color nav-color"
+														to={"/"}
+													>
 														Lease
-													</a>
+													</Link>
 												</li>
 												<li class="nav-item px-2">
 													<a class="nav-link nav-font-color nav-color" href="/">
