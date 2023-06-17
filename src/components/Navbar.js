@@ -20,7 +20,7 @@ function Navbar() {
 									>
 										<a
 											class="navbar-brand nav ms-4 navbar-dark"
-											href="./home.html"
+											href="/home"
 										>
 											<OtherHousesOutlinedIcon fontSize="large" />
 											<span>&nbsp;</span>
@@ -55,8 +55,8 @@ function Navbar() {
 
 											<ul class="navbar-nav">
 												<li class="nav-item active px-2">
-													<a class="nav-link nav-font-color nav-color" href="/">
-														Home
+													<a class="nav-link nav-font-color nav-color" href="/property-listing">
+														Buy
 													</a>
 												</li>
 												<li class="nav-item px-2">
