@@ -8,10 +8,10 @@ function PropertyListing() {
 			{/* NAVBAR */}
 			<NavbarOther />
 
-			{/* PROPERTY HOUSE SALE & IMAGE DIV */}
 			<div className="container">
 				<div className="row justify-content-center">
 					<div className="col-sm-12" style={{ maxHeight: "200px" }}>
+						{/* PROPERTY HOUSE SALE & IMAGE DIV */}
 						<div className="row mt-5">
 							<div
 								className="col-md-6 col-sm-12"
@@ -36,12 +36,44 @@ function PropertyListing() {
 						</div>
 
 						{/* PROPERTY CARDS */}
-                            <h3>Properties in Mumbai</h3>
-						<div className="d-flex">
-							<PropertyCard />
-							<PropertyCard />
-							<PropertyCard />
-                            <PropertyCard />
+						<div>
+							<h3>Properties in Mumbai</h3>
+							<div className="d-flex">
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+							</div>
+						</div>
+
+                        <div className="mt-5">
+							<h3>Properties in Delhi</h3>
+							<div className="d-flex">
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+							</div>
+						</div>
+
+                        <div className="mt-5">
+							<h3>Properties in Banglore</h3>
+							<div className="d-flex">
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+							</div>
+						</div>
+
+                        <div className="mt-5">
+							<h3>Properties in Hyderabad</h3>
+							<div className="d-flex">
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+								<PropertyCard />
+							</div>
 						</div>
 					</div>
 				</div>

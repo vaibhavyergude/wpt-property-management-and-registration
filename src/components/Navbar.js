@@ -19,13 +19,13 @@ function Navbar() {
 										style={{ width: "100%" }}
 									>
 										<a
-											class="navbar-brand nav ms-4 navbar-dark"
+											class="navbar-brand nav ms-4 navbar-dark increase-size"
 											href="/home"
 										>
-											<OtherHousesOutlinedIcon fontSize="large" />
-											<span>&nbsp;</span>
-											<span>&nbsp;</span>
-											<h3>ElitePro</h3>
+											<div class="logo-container">
+												<OtherHousesOutlinedIcon fontSize="large" />
+												<h3>ElitePro</h3>
+											</div>
 										</a>
 										<button
 											class="navbar-toggler"
@@ -55,7 +55,10 @@ function Navbar() {
 
 											<ul class="navbar-nav">
 												<li class="nav-item active px-2">
-													<a class="nav-link nav-font-color nav-color" href="/property-listing">
+													<a
+														class="nav-link nav-font-color nav-color"
+														href="/property-listing"
+													>
 														Buy
 													</a>
 												</li>
@@ -110,12 +113,10 @@ function Navbar() {
 										<h3>Find the best property deal, rentals in India</h3>
 									</div> */}
 									<div class="col-sm-3 col-md-6 col-lg-8 mt-5">
-										<h1 class="display-4 text-white">
-											Welcome to  ElitePro
-										</h1>
+										<h1 class="display-4 text-white">Welcome to ElitePro</h1>
 										<p class="lead text-white">
-                                        <h1>The best property related website in india</h1>
-										<h3>Find the best property deal, rentals in India</h3>
+											<h1>The best property related website in india</h1>
+											<h3>Find the best property deal, rentals in India</h3>
 										</p>
 										{/* <a class="btn btn-primary btn-lg" href="./services.html">
 											Explore Services

@@ -1,6 +1,6 @@
 body {
-    overflow-x: hidden;
-    /* background-color: rgb(230, 243, 243); */
+	overflow-x: hidden;
+	/* background-color: rgb(230, 243, 243); */
 }
 
 .image-container {
@@ -9,7 +9,7 @@ body {
 	background-image: url(https://ssl.cdn-redfin.com/v475.2.1/images/homepage/banners/genHomepageDesktopBanner/HPTO_2120-NW-97th-St-Seattle_PremierHP.jpg);
 	background-size: cover;
 	background-position: center;
-    position: absolute;
+	position: absolute;
 }
 
 .search-form {
@@ -94,9 +94,9 @@ body {
 	transition: background-color 0.3s ease;
 }
 
-.sign_button{
-    text-decoration: none;
-    color: #Fff;
+.sign_button {
+	text-decoration: none;
+	color: #fff;
 }
 
 .custom-button:hover {
@@ -104,8 +104,8 @@ body {
 	color: #343a40;
 }
 
-.sign_button:hover{
-    color: #343a40;
+.sign_button:hover {
+	color: #343a40;
 }
 
 .nav-font-color {
@@ -189,4 +189,22 @@ body {
 
 .footer ul li {
 	margin-bottom: 10px;
+}
+
+.increase-size {
+	transition: transform 0.3s ease;
+}
+
+.increase-size:hover {
+	transform: scale(1.2);
+}
+
+.logo-container {
+	display: flex;
+	align-items: center;
+}
+
+.logo-container h3 {
+	margin-left: 10%;
+    margin-top: 10px;
 }
