@@ -2,7 +2,8 @@
 import Navbar from "./components/Navbar";
 import HomeCarousel from "./components/HomeCarousel";
 import HomeCards from "./components/HomeCards";
-
+import HomePropertyCards from "./components/HomePropertyCards";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <Navbar />
       <HomeCarousel />
       <HomeCards />
+      {/* <HomePropertyCards/> */}
+      <Footer />
     </div>
   );
 }
