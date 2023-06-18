@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
 import NavbarOther from "../NavbarOther/NavbarOther";
+import PropertyIndividualPage from "../PropertyIndividualPage/PropertyIndividualPage";
+// import Footer from "../Footer.js";
 
 function PropertyListing() {
+
+    const [list, setList] = useState([]);
+
+    useEffect(() => {
+      getAllPropertyListing();
+    }, [])
+    
+    const getAllPropertyListing = async () => {
+		let url = `http://localhost:4000/property-listing`;
+
+		let res = await fetch(url);
+
+		let list = await res.json();
+
+		setList(list);
+	};
+
 	return (
 		<div>
 			{/* NAVBAR */}
@@ -46,7 +65,7 @@ function PropertyListing() {
 							</div>
 						</div>
 
-                        <div className="mt-5">
+						<div className="mt-5">
 							<h3>Properties in Delhi</h3>
 							<div className="d-flex">
 								<PropertyCard />
@@ -56,7 +75,7 @@ function PropertyListing() {
 							</div>
 						</div>
 
-                        <div className="mt-5">
+						<div className="mt-5">
 							<h3>Properties in Banglore</h3>
 							<div className="d-flex">
 								<PropertyCard />
@@ -66,7 +85,7 @@ function PropertyListing() {
 							</div>
 						</div>
 
-                        <div className="mt-5">
+						<div className="mt-5 ">
 							<h3>Properties in Hyderabad</h3>
 							<div className="d-flex">
 								<PropertyCard />
@@ -76,6 +95,9 @@ function PropertyListing() {
 							</div>
 						</div>
 					</div>
+
+					{/* FOOTER */}
+					{/* <Footer /> */}
 				</div>
 			</div>
 		</div>

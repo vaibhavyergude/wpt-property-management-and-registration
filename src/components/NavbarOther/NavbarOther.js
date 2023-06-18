@@ -3,6 +3,7 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "./NavbarOther.css";
 import SearchIcon from "@mui/icons-material/Search";
 import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
+import { Link } from "react-router-dom";
 
 function NavbarOther() {
 	return (
@@ -10,13 +11,13 @@ function NavbarOther() {
 			<div className="col-12">
 				<Navbar bg="dark" variant="dark" expand="lg" style={{ width: "100%" }}>
 					<Navbar.Brand
-						className="navbar-brand nav ms-4 nav-font-color"
+						className="navbar-brand nav ms-4 nav-font-color increase-size"
 						href="./home"
 					>
-						<OtherHousesOutlinedIcon fontSize="large" />
-						<span>&nbsp;</span>
-						<span>&nbsp;</span>
-						<h3>ElitePro</h3>
+						<div className="logo-container">
+							<OtherHousesOutlinedIcon fontSize="large" />
+							<h3>ElitePro</h3>
+						</div>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="navbarNav" />
 					<Navbar.Collapse
@@ -27,7 +28,7 @@ function NavbarOther() {
 							<FormControl type="text" placeholder="Search" />
 							<Button type="submit">
 								{/* <img src="./images/search_icon.png" alt="" id="search_icon" /> */}
-                                <SearchIcon style={{color:"black"}}/>
+								<SearchIcon style={{ color: "black" }} />
 							</Button>
 						</Form>
 						<Nav className="navbar-nav">
@@ -36,7 +37,7 @@ function NavbarOther() {
 									Buy
 								</a>
 							</Nav.Link>
-							<Nav.Link className="nav-item px-2">
+							{/* <Nav.Link className="nav-item px-2">
 								<a className="nav-link" href="#">
 									Lease
 								</a>
@@ -45,7 +46,7 @@ function NavbarOther() {
 								<a className="nav-link" href="#">
 									Rent
 								</a>
-							</Nav.Link>
+							</Nav.Link> */}
 							<Nav.Link className="nav-item px-2">
 								<a className="nav-link" href="/aboutus">
 									About Us
@@ -60,7 +61,7 @@ function NavbarOther() {
 					</Navbar.Collapse>
 
 					<div className="nav-button mx-2">
-						<Button
+						{/* <Button
 							variant=""
 							className="custom-button"
 							onClick={() => {
@@ -77,7 +78,22 @@ function NavbarOther() {
 							}}
 						>
 							Sign Up
-						</Button>
+						</Button> */}
+						<Link
+							className={"custom-button"}
+							to={"/login"}
+							style={{ textDecoration: "none" }}
+						>
+							Login
+						</Link>
+						<span>&nbsp; &nbsp;</span>
+						<Link
+							className={"custom-button"}
+							to={"/register"}
+							style={{ textDecoration: "none" }}
+						>
+							Sign Up
+						</Link>
 					</div>
 				</Navbar>
 			</div>

@@ -72,7 +72,7 @@ function Navbar() {
 														Buy
 													</Link>
 												</li>
-												<li class="nav-item px-2">
+												{/* <li class="nav-item px-2">
 													<Link
 														class="nav-link nav-font-color nav-color"
 														to={"/"}
@@ -84,7 +84,7 @@ function Navbar() {
 													<a class="nav-link nav-font-color nav-color" href="/">
 														Rent
 													</a>
-												</li>
+												</li> */}
 												<li class="nav-item px-2">
 													<a
 														class="nav-link nav-font-color nav-color"
@@ -105,18 +105,21 @@ function Navbar() {
 										</div>
 
 										<div class="nav-button mx-2">
-											<input
-												type="button"
-												class="custom-button"
-												value="Log In"
-												onclick="window.location.href='./login.html'"
-											/>
-											<input
-												type="button"
-												class="custom-button"
-												value="Sign Up"
-												onclick="window.location.href='./registration.html'"
-											/>
+											<Link
+												className={"custom-button"}
+												to={"/login"}
+												style={{ textDecoration: "none" }}
+											>
+												Login
+											</Link>
+                                                <span>&nbsp; &nbsp;</span>
+                                            <Link
+												className={"custom-button"}
+												to={"/register"}
+												style={{ textDecoration: "none" }}
+											>
+												Sign Up
+											</Link>
 										</div>
 									</nav>
 								</div>

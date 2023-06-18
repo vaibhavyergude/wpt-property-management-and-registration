@@ -8,8 +8,10 @@
 import React from "react";
 import HomePage from "./components/HomePage/HomePage";
 import PropertyListing from "./components/PropertyListing/PropertyListing";
-
+import PropertyIndividualPage from "./components/PropertyIndividualPage/PropertyIndividualPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./components/Login/Login";
+import Signup from "./components/Signup/Signup";
 
 function App() {
 	return (
@@ -25,6 +27,9 @@ function App() {
 					<Route path="/" element={<HomePage />} />
                     <Route path="/home" element={<HomePage />} />
 					<Route path="/property-listing" element={<PropertyListing />} />
+                    <Route path="/property-individual-page" element={<PropertyIndividualPage />} />
+                    <Route path="/login" element={<Login />}/>
+                    <Route path="/register" element={<Signup />}/>
 				</Routes>
 			</BrowserRouter>
 		</div>
