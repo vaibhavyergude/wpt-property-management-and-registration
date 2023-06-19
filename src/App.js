@@ -12,6 +12,8 @@ import PropertyIndividualPage from "./components/PropertyIndividualPage/Property
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import Signup from "./components/Signup/Signup";
+import BookVisit from "./components/BookVisit/BookVisit";
+import Aboutus from "./components/Aboutus/Aboutus";
 
 function App() {
 	return (
@@ -30,6 +32,8 @@ function App() {
                     <Route path="/property-individual-page" element={<PropertyIndividualPage />} />
                     <Route path="/login" element={<Login />}/>
                     <Route path="/register" element={<Signup />}/>
+                    <Route path="/book-visit" element={<BookVisit />}/>
+                    <Route path="/aboutus" element={<Aboutus />}/>
 				</Routes>
 			</BrowserRouter>
 		</div>

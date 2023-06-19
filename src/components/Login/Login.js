@@ -14,14 +14,57 @@ function Login() {
 		password: "",
 	});
 
+	let [validationMessages, setValidationMessages] = useState({
+		email: "",
+		password: "",
+	});
+
 	let handlerPasswordAction = (e) => {
 		let newuser = { ...user, password: e.target.value };
 		setUser(newuser);
+		validatePassword();
 	};
 
 	let handlerEmailAction = (e) => {
 		let newuser = { ...user, email: e.target.value };
 		setUser(newuser);
+		validateEmail();
+	};
+
+	const validateField = (fieldName, value) => {
+		let error = null;
+
+		if (fieldName === "email") {
+			if (!value) {
+				error = "Please enter your email";
+			} else if (!/\S+@\S+\.\S+/.test(value)) {
+				error = "Please enter a valid email";
+			}
+		} else if (fieldName === "password") {
+			error = value ? null : "Please enter your password";
+		}
+
+		return error;
+	};
+
+	const validateEmail = () => {
+		const { email } = user;
+		const error = validateField("email", email);
+
+		setValidationMessages((prevMessages) => ({
+			...prevMessages,
+			email: error,
+		}));
+	};
+
+	const validatePassword = () => {
+		const { password } = user;
+		const error = validateField("password", password);
+
+		setValidationMessages((prevMessages) => ({
+			...prevMessages,
+			password: error,
+		}));
 	};
 
 	let loginAction = async () => {
@@ -32,7 +75,7 @@ function Login() {
 				return;
 			}
 
-			// BACKEND :: ...
+			// Backend login code...
 			let url = `http://localhost:4000/login-by-post`;
 			let data = { email: user.email, password: user.password };
 			let res = await fetch(url, {
@@ -43,7 +86,9 @@ function Login() {
 				},
 			});
 
-			if (res.status == 500) {
+			console.log(data);
+
+			if (res.status === 500) {
 				let erroMessage = await res.text();
 				throw new Error(erroMessage);
 			}
@@ -62,7 +107,7 @@ function Login() {
 	};
 
 	return (
-		<div className="my-img d-flex flex-column">
+		<div className="my-img1 d-flex flex-column">
 			<NavbarOther />
 
 			<div className="container">
@@ -76,21 +121,37 @@ function Login() {
 						<form ref={formRef} className="needs-validation">
 							<input
 								type="email"
-								className="form-control form-control-lg mb-2"
+								className={`form-control form-control-lg mb-2 ${
+									validationMessages.email ? "is-invalid" : ""
+								}`}
 								placeholder="Enter Email"
 								value={user.email}
 								onChange={handlerEmailAction}
+								onBlur={validateEmail}
 								required
 							/>
+							{validationMessages.email && (
+								<div className="invalid-feedback">
+									{validationMessages.email}
+								</div>
+							)}
 
 							<input
 								type="password"
-								className="form-control form-control-lg mb-2"
+								className={`form-control form-control-lg mb-2 ${
+									validationMessages.password ? "is-invalid" : ""
+								}`}
 								placeholder="Enter password"
 								value={user.password}
 								onChange={handlerPasswordAction}
+								onBlur={validatePassword}
 								required
 							/>
+							{validationMessages.password && (
+								<div className="invalid-feedback" >
+									{validationMessages.password}
+								</div>
+							)}
 
 							<input
 								type="button"
@@ -99,8 +160,13 @@ function Login() {
 								onClick={loginAction}
 							/>
 
-							<div className="d-flex justify-content-center " >
-								<Link to={"/registration"} style={{textDecoration:"none", color:"white"}}>New User, Register here</Link>
+							<div className="d-flex justify-content-center ">
+								<Link
+									to={"/registration"}
+									style={{ textDecoration: "none", color: "white" }}
+								>
+									New User, Register here
+								</Link>
 							</div>
 							<div></div>
 						</form>

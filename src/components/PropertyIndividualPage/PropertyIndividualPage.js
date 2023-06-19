@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import NavbarOther from "../NavbarOther/NavbarOther";
 import "./PropertyIndividualPage.css";
+import Footer from "../Footer.js";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function PropertyIndividualPage() {
 	const [property, setProperty] = useState(null);
@@ -69,8 +72,15 @@ function PropertyIndividualPage() {
 							</div>
 						</div>
 					</div>
-
-					<div></div>
+					<hr />
+					<div>
+						{/* <input as={Link}  type="button" value="Book A Visit"  className="btn btn-danger w-100 fs-5"/> */}
+						<Link to="/book-visit" style={{ textDecoration: "none" }}>
+							<button type="submit" className="btn btn-danger w-100 fs-5">
+								Book A Visit
+							</button>
+						</Link>
+					</div>
 				</div>
 				<div className="col-sm-12 col-md-6">
 					<div
@@ -108,6 +118,7 @@ function PropertyIndividualPage() {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 }

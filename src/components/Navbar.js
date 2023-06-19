@@ -3,9 +3,22 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+	let navigate = useNavigate();
+
+	const logOutAction = () => {
+		localStorage.removeItem("loginStatus");
+		navigate("/login", { replace: true });
+	};
+
+	// Assistance of LocalStorage
+	let loginStatus = localStorage.getItem("loginStatus");
+	// if (!loginStatus) {
+	// 	return <></>;
+	// }
+
 	return (
 		<div>
 			<div class="row">
@@ -86,12 +99,18 @@ function Navbar() {
 													</a>
 												</li> */}
 												<li class="nav-item px-2">
-													<a
+													{/* <a
 														class="nav-link nav-font-color nav-color"
 														href="./aboutus.html"
 													>
 														About Us
-													</a>
+													</a> */}
+                                                    <Link
+														class="nav-link nav-font-color nav-color"
+														to={"/aboutus"}
+													>
+														About Us
+													</Link>
 												</li>
 												<li class="nav-item px-2">
 													<a
@@ -104,7 +123,7 @@ function Navbar() {
 											</ul>
 										</div>
 
-										<div class="nav-button mx-2">
+										{/* <div class="nav-button mx-2">
 											<Link
 												className={"custom-button"}
 												to={"/login"}
@@ -112,15 +131,44 @@ function Navbar() {
 											>
 												Login
 											</Link>
-                                                <span>&nbsp; &nbsp;</span>
-                                            <Link
+											<span>&nbsp; &nbsp;</span>
+											<Link
 												className={"custom-button"}
 												to={"/register"}
 												style={{ textDecoration: "none" }}
 											>
 												Sign Up
 											</Link>
-										</div>
+										</div> */}
+
+										{loginStatus ? (
+											<div class="nav-button mx-2">
+												<button
+													className={"custom-button"}
+													onClick={logOutAction}
+												>
+													Logout
+												</button>
+											</div>
+										) : (
+											<div class="nav-button mx-2">
+												<Link
+													className={"custom-button"}
+													to={"/login"}
+													style={{ textDecoration: "none" }}
+												>
+													Login
+												</Link>
+												<span>&nbsp; &nbsp;</span>
+												<Link
+													className={"custom-button"}
+													to={"/register"}
+													style={{ textDecoration: "none" }}
+												>
+													Sign Up
+												</Link>
+											</div>
+										)}
 									</nav>
 								</div>
 								<div class="body_content">

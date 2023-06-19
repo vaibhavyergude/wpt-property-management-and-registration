@@ -3,9 +3,22 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import "./NavbarOther.css";
 import SearchIcon from "@mui/icons-material/Search";
 import OtherHousesOutlinedIcon from "@mui/icons-material/OtherHousesOutlined";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function NavbarOther() {
+	let navigate = useNavigate();
+
+	const logOutAction = () => {
+		localStorage.removeItem("loginStatus");
+		navigate("/login", { replace: true });
+	};
+
+	// Assistance of LocalStorage
+	let loginStatus = localStorage.getItem("loginStatus");
+	// if (!loginStatus) {
+	// 	return <></>;
+	// }
+
 	return (
 		<div className="row">
 			<div className="col-12">
@@ -32,10 +45,17 @@ function NavbarOther() {
 							</Button>
 						</Form>
 						<Nav className="navbar-nav">
-							<Nav.Link className="nav-item active px-2">
-								<a className="nav-link" href="/property-listing">
+							<Nav.Link className="nav-item px-2">
+								{/* <a className="nav-link" href="/property-listing">
 									Buy
-								</a>
+								</a> */}
+                                <Link
+									className={"nav-link"}
+									to={"/property-listing"}
+									style={{ textDecoration: "none" }}
+								>
+									Buy
+								</Link>
 							</Nav.Link>
 							{/* <Nav.Link className="nav-item px-2">
 								<a className="nav-link" href="#">
@@ -48,14 +68,22 @@ function NavbarOther() {
 								</a>
 							</Nav.Link> */}
 							<Nav.Link className="nav-item px-2">
-								<a className="nav-link" href="/aboutus">
+                                <Link
+									className={"nav-link"}
+									to={"/aboutus"}
+									style={{ textDecoration: "none" }}
+								>
 									About Us
-								</a>
+								</Link>
 							</Nav.Link>
 							<Nav.Link className="nav-item px-2">
-								<a className="nav-link" href="/contactus">
+                                <Link
+									className={"nav-link"}
+									to={"/contactus"}
+									style={{ textDecoration: "none" }}
+								>
 									Contact Us
-								</a>
+								</Link>
 							</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
@@ -79,7 +107,7 @@ function NavbarOther() {
 						>
 							Sign Up
 						</Button> */}
-						<Link
+						{/* <Link
 							className={"custom-button"}
 							to={"/login"}
 							style={{ textDecoration: "none" }}
@@ -93,7 +121,33 @@ function NavbarOther() {
 							style={{ textDecoration: "none" }}
 						>
 							Sign Up
-						</Link>
+						</Link> */}
+
+						{loginStatus ? (
+							<div class="nav-button mx-2">
+								<button className={"custom-button"} onClick={logOutAction}>
+									Logout
+								</button>
+							</div>
+						) : (
+							<div class="nav-button mx-2">
+								<Link
+									className={"custom-button"}
+									to={"/login"}
+									style={{ textDecoration: "none" }}
+								>
+									Login
+								</Link>
+								<span>&nbsp; &nbsp;</span>
+								<Link
+									className={"custom-button"}
+									to={"/register"}
+									style={{ textDecoration: "none" }}
+								>
+									Sign Up
+								</Link>
+							</div>
+						)}
 					</div>
 				</Navbar>
 			</div>
