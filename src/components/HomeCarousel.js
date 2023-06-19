@@ -9,38 +9,36 @@ function HomeCarousel() {
 				<img
 					height={370}
 					className="d-block w-100"
-					src="https://picsum.photos/1080"
+					src="https://www.tclf.org/sites/default/files/styles/crop_2000x700/public/thumbnails/image/GovernorsIsland_hero_CharlesABirnbaum_2016_0.jpg?itok=3YiWam_c"
 					alt="First slide"
 				/>
 				<Carousel.Caption>
-					<h3>First slide label</h3>
-					<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+					<h3>New York</h3>
+					<p>The Big Apple</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item interval={500}>
 				<img
 					height={370}
 					className="d-block w-100"
-					src="https://picsum.photos/1070"
+					src="https://cdn.britannica.com/02/163002-050-5E5121B6/Chicago-skyline.jpg"
 					alt="Second slide"
 				/>
 				<Carousel.Caption>
-					<h3>Second slide label</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					<h3>Chicago</h3>
+					<p>Second to none</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 			<Carousel.Item>
 				<img
 					height={370}
 					className="d-block w-100"
-					src="https://picsum.photos/1060"
+					src="https://images.unsplash.com/photo-1572925151789-c13420b54514?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=josh-miller-x0jaoF-qPCU-unsplash.jpg"
 					alt="Third slide"
 				/>
 				<Carousel.Caption>
-					<h3>Third slide label</h3>
-					<p>
-						Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-					</p>
+					<h3>Los Angeles</h3>
+					<p>The City of Hollywood</p>
 				</Carousel.Caption>
 			</Carousel.Item>
 		</Carousel>

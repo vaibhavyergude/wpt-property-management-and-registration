@@ -162,7 +162,7 @@ function Signup() {
               }`}
               placeholder="Enter Username"
               value={user.username}
-              onBlur={handleUsernameAction}
+              onChange={handleUsernameAction}
               required
             />
             {errors.username && (
@@ -176,7 +176,7 @@ function Signup() {
               }`}
               placeholder="Enter Password"
               value={user.password}
-              onBlur={handlePasswordAction}
+              onChange={handlePasswordAction}
               required
             />
             {errors.password && (
@@ -190,7 +190,7 @@ function Signup() {
               }`}
               placeholder="Enter E-mail"
               value={user.email}
-              onBlur={handleEmailAction}
+              onChange={handleEmailAction}
               required
             />
             {errors.email && (
@@ -204,7 +204,7 @@ function Signup() {
               }`}
               placeholder="Enter Mobile Number"
               value={user.mobile}
-              onBlur={handleMobileAction}
+              onChange={handleMobileAction}
               required
             />
             {errors.mobile && (

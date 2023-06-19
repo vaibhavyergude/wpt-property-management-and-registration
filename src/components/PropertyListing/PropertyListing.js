@@ -1,25 +1,50 @@
 import React, { useEffect, useState } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
 import NavbarOther from "../NavbarOther/NavbarOther";
-import PropertyIndividualPage from "../PropertyIndividualPage/PropertyIndividualPage";
-// import Footer from "../Footer.js";
+import Footer from "../Footer.js";
 
 function PropertyListing() {
+	const [propertyList, setPropertyList] = useState([]);
+	const [sortingOption, setSortingOption] = useState("price"); // Default sorting option is "price"
 
-    const [list, setList] = useState([]);
+	useEffect(() => {
+		getAllPropertyListing();
+	}, []);
 
-    useEffect(() => {
-      getAllPropertyListing();
-    }, [])
-    
-    const getAllPropertyListing = async () => {
+	const getAllPropertyListing = async () => {
 		let url = `http://localhost:4000/property-listing`;
-
 		let res = await fetch(url);
-
 		let list = await res.json();
+		setPropertyList(list);
+	};
 
-		setList(list);
+	const handleSortingOptionChange = (event) => {
+		setSortingOption(event.target.value);
+	};
+
+	useEffect(() => {
+		sortPropertyList();
+	}, [sortingOption]);
+
+	const sortPropertyList = () => {
+		let sortedList = [...propertyList];
+
+		switch (sortingOption) {
+			case "price":
+				sortedList.sort((a, b) => a.price - b.price);
+				break;
+			case "bhk":
+				sortedList.sort((a, b) => a.bhk - b.bhk);
+				break;
+			case "sqft":
+				sortedList.sort((a, b) => a.sqft - b.sqft);
+				break;
+			// Add more cases for other sorting options if needed
+			default:
+				break;
+		}
+
+		setPropertyList(sortedList);
 	};
 
 	return (
@@ -29,7 +54,10 @@ function PropertyListing() {
 
 			<div className="container">
 				<div className="row justify-content-center">
-					<div className="col-sm-12" style={{ maxHeight: "200px" }}>
+					<div
+						className="col-sm-12"
+						style={{ maxHeight: "200px", marginLeft: "10%" }}
+					>
 						{/* PROPERTY HOUSE SALE & IMAGE DIV */}
 						<div className="row mt-5">
 							<div
@@ -54,45 +82,40 @@ function PropertyListing() {
 							</div>
 						</div>
 
+						{/* SORTING OPTIONS */}
+						<div className="row mt-3">
+							<div className="col-md-6 col-sm-12 d-flex align-item-center">
+								<label htmlFor="sortingOption">Sort by:</label>
+								<select
+									id="sortingOption"
+									className="form-control w-50"
+									value={sortingOption}
+									onChange={handleSortingOptionChange}
+								>
+									<option value="price">Price</option>
+									<option value="bhk">BHK</option>
+									<option value="sqft">Sq. Ft.</option>
+									{/* Add more sorting options as needed */}
+								</select>
+							</div>
+						</div>
+
 						{/* PROPERTY CARDS */}
-						<div>
-							<h3>Properties in Mumbai</h3>
-							<div className="d-flex">
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-							</div>
-						</div>
-
-						<div className="mt-5">
-							<h3>Properties in Delhi</h3>
-							<div className="d-flex">
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-							</div>
-						</div>
-
-						<div className="mt-5">
-							<h3>Properties in Banglore</h3>
-							<div className="d-flex">
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-							</div>
-						</div>
-
-						<div className="mt-5 ">
-							<h3>Properties in Hyderabad</h3>
-							<div className="d-flex">
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-								<PropertyCard />
-							</div>
+						<div className="d-flex flex-wrap" style={{}}>
+							{propertyList.map((item) => (
+								<PropertyCard
+									key={item.id}
+									image={item.image}
+									addressFirst={item.addressFirst}
+									addressSecond={item.addressSecond}
+									price={item.price}
+									bhk={item.bhk}
+									sqft={item.sqft}
+									yearBuilt={item.yearBuilt}
+									aboutHouse={item.aboutHouse}
+									num={item.num}
+								/>
+							))}
 						</div>
 					</div>
 

@@ -188,6 +188,7 @@ const BookVisit = () => {
 					console.log("Submission successful:", data);
 					// Perform any additional logic or UI updates as needed
 
+                    alert("You have booked a visit");
 					// Reset the form and errors
 					setName("");
 					setEmail("");
@@ -203,6 +204,13 @@ const BookVisit = () => {
 				// Handle errors if the request fails
 				console.error("Submission failed:", error);
 				// Perform any error handling or display appropriate messages
+			} finally {
+				setName("");
+				setEmail("");
+				setDate("");
+				setTime("");
+				setMobile("");
+				setErrors({});
 			}
 		}
 	};

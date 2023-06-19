@@ -17,15 +17,15 @@ function HomePropertyCards() {
 								style={{ height: "24vh" }}
 							/>
 							<div class="card-body mt-3">
-								<h5 class="card-title">Piyush Residency</h5>
+								<h5 class="card-title">BriarCrest</h5>
 								<p class="card-text">
 									Bestowing excellent hospitality to its every category of
 									guests, Piyush Residency reflects the culture and ethos of its
 									location. With jawdropping views
 								</p>
-								<a href="#" class="btn btn-primary">
+								{/* <a href="#" class="btn btn-primary">
 									Go to Property
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
@@ -39,15 +39,15 @@ function HomePropertyCards() {
 								style={{ height: "24vh" }}
 							/>
 							<div class="card-body mt-3">
-								<h5 class="card-title">Vaibhav Apartments</h5>
+								<h5 class="card-title">Rockwell Apartments</h5>
 								<p class="card-text">
 									Vaibhav Apratments goes above and beyond to provide
 									exceptional hospitality to guests from all backgrounds,
 									showcasing the local culture and values of its..
 								</p>
-								<a href="#" class="btn btn-primary">
+								{/* <a href="#" class="btn btn-primary">
 									Go to Property
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
@@ -61,15 +61,15 @@ function HomePropertyCards() {
 								style={{ height: "24vh" }}
 							/>
 							<div class="card-body mt-3">
-								<h5 class="card-title">Shivani Society</h5>
+								<h5 class="card-title">Newport Apartments</h5>
 								<p class="card-text">
 									As you step inside, you are greeted by an openness layout that
 									seamlessly combines the living, dining, and kitchen areas. The
 									design of space fosters a sense of openness.
 								</p>
-								<a href="#" class="btn btn-primary">
+								{/* <a href="#" class="btn btn-primary">
 									Go to Property
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>
@@ -83,16 +83,16 @@ function HomePropertyCards() {
 								style={{ height: "24vh" }}
 							/>
 							<div class="card-body">
-								<h5 class="card-title mt-3">Aditya Enclave</h5>
+								<h5 class="card-title mt-3">Royal Retreat</h5>
 								<p class="card-text">
 									The project is set in an area of 8 acres and offers various
 									configurations including residential plot formats. The plot
 									area is 1200.0 sq.ft. and there is one building. With all the
 									accessibilty
 								</p>
-								<a href="#" class="btn btn-primary">
+								{/* <a href="#" class="btn btn-primary">
 									Go to Property
-								</a>
+								</a> */}
 							</div>
 						</div>
 					</div>

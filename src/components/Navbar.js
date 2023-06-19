@@ -105,7 +105,7 @@ function Navbar() {
 													>
 														About Us
 													</a> */}
-                                                    <Link
+													<Link
 														class="nav-link nav-font-color nav-color"
 														to={"/aboutus"}
 													>
@@ -113,12 +113,19 @@ function Navbar() {
 													</Link>
 												</li>
 												<li class="nav-item px-2">
-													<a
+													{/* <a
 														class="nav-link nav-font-color"
 														href="./contactus.html"
 													>
 														Contact Us
-													</a>
+													</a> */}
+
+													<Link
+														class="nav-link nav-font-color nav-color"
+														to={"/contactus"}
+													>
+														Contact Us
+													</Link>
 												</li>
 											</ul>
 										</div>
@@ -179,8 +186,8 @@ function Navbar() {
 									<div class="col-sm-3 col-md-6 col-lg-8 mt-5">
 										<h1 class="display-4 text-white">Welcome to ElitePro</h1>
 										<p class="lead text-white">
-											<h1>The best property related website in india</h1>
-											<h3>Find the best property deal, rentals in India</h3>
+											<h1>The best property related website in USA</h1>
+											<h3>Find the best property deal, rentals in USA</h3>
 										</p>
 										{/* <a class="btn btn-primary btn-lg" href="./services.html">
 											Explore Services
